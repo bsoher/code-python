@@ -1,0 +1,312 @@
+Why Documenting Your Code Is So Important
+----------------------------------------- 
+
+    “Code is more often read than written.”
+
+    — Guido van Rossum
+
+The documentation of projects have a simple progression:
+
+- No Documentation
+- Some Documentation
+- Complete Documentation
+- Good Documentation
+- Great Documentation
+
+If you’re at a loss about where to go next with your documentation, look at
+where your project is now in relation to the progression above. Do you have
+any documentation? If not, then start there. If you have some documentation
+but are missing some of the key project files, get started by adding those.
+
+In the end, don’t get discouraged or overwhelmed by the amount of work 
+required for documenting code. Once you get started documenting your code, it
+becomes easier to keep going.
+
+    “It doesn’t matter how good your software is, because if the 
+    documentation is not good enough, people will not use it.“
+
+    — Daniele Procida
+
+
+1. https://realpython.com/documenting-python-code/
+
+**Documenting Your Python Projects - the view from 30,000 feet!**
+-----------------------------------------------------------------
+Python projects vary. Documentation should suit your situation. Be mindful of
+who users are and their needs. 
+
+The general layout of the project and its documentation should be as follows:
+
+    project_root/
+    ¦
+    +-- project/  # Project source code
+    +-- docs/
+            +- tutorials
+            +- how-to-guides
+            +- references
+            +- explanations
+    +-- README
+    +-- LICENSE
+    +-- HOW_TO_CONTRIBUTE
+    +-- CODE_OF_CONDUCT
+    +-- examples.py
+        - A Python script file that gives simple examples of how to use the project.
+
+    README  - A brief summary of the project and its purpose. Include any
+    special requirements for installation or operating the project.
+    LICENSE - A plaintext file that describes the license your project is 
+    using.
+    HOW_TO_CONTRIBUTE - This should include how new contributors to the 
+    project can start contributing.
+    CODE_OF_CONDUCT - Defines how other contributors should treat each other 
+    when developing or using your software. 
+    examples.py - A Python script file that gives simple examples of how to 
+    use the project.
+
+Now, BREATH .... :)  This is a full-featured, all-the-bells-and-whistles 
+description. Not all projects need all these items.
+
+Projects can be generally subdivided into three major types: Private, Shared,
+and Public/Open Source.
+
+    Private     - README, examples.py
+    Shared      - README, examples.py, How to Contribute
+    Open Source - README, examples.py, How to Contribute, Code of Conduct, LICENSE, docs
+
+**Commenting vs. Documenting Code**
+----------------------------------
+    “Code tells you how; Comments tell you why.”
+
+    — Jeff Atwood (aka Coding Horror)
+
+*Commenting* - describing your code, intended main audience is the 
+maintainers/developers. Along with well-written code, comments guide the 
+reader to better understand code and its purpose and design.
+
+    Comments are created in Python using the pound sign (#) and should be 
+    brief statements no longer than a few sentences. Here’s a simple example:
+
+        def hello_world():
+            # A simple comment preceding a simple print statement
+            print("Hello World")
+
+    Commenting your code serves multiple purposes, including: 
+        Planning and Reviewing ( # first step )
+        Code Description (show *intent* of a section of code)
+        Algorithmic Description (show how algorithm works) 
+        Tagging ( #TODO  or  #FIXME )
+
+    General Implementation Suggestions
+     - Keep close to code described. Otherwise, frustrating to reader and 
+     easily missed if code updated.
+     - Don’t use complex formatting (such as tables or ASCII figures).
+     Distracting and hard to maintain.
+     - Don’t include redundant information. Assume reader has a basic 
+     understanding of programming.
+     - Design your code to comment itself. The easiest way to understand code
+     is by reading it. 
+
+*Documenting* - describing code use and functionality to your users. The main
+intended audience is the users. 
+
+Documenting your Python code is all centered on docstrings. These are built-
+in strings that, when configured correctly, can help your users and yourself 
+with your project’s documentation. 
+Python also has the built-in function help() that prints out the object's 
+docstring to the console. 
+
+
+2. https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html
+
+Google vs NumPy - both good styles, BUT Choose One and Stick To It!  Don't
+mix!
+
+The main difference between the two styles is that Google uses indention to 
+separate sections, whereas NumPy uses underlines.
+
+Google style:
+
+    -----------------------------
+    def func(arg1, arg2):
+        """Summary line.
+
+        Extended description of function.
+
+        Args:
+        arg1 (int): Description of arg1
+        arg2 (str): Description of arg2
+
+        Returns:
+        bool: Description of return value
+
+        """
+        return True
+    -----------------------------
+
+NumPy style:
+
+    -----------------------------
+    def func(arg1, arg2):
+        """Summary line.
+
+        Extended description of function.
+
+        Parameters
+        ----------
+        arg1 : int
+        Description of arg1
+        arg2 : str
+        Description of arg2
+
+        Returns
+        -------
+        bool
+        Description of return value
+
+        """
+        return True
+    -----------------------------
+
+NumPy style tends to require more vertical space, whereas Google style tends 
+to use more horizontal space. Google style tends to be easier to read for 
+short and simple docstrings, whereas NumPy style tends be easier to read for
+long and in-depth docstrings.
+
+The Khan Academy recommends using Google style. The choice between styles is
+largely aesthetic, but the two styles should not be mixed. Choose one style 
+for your project and be consistent with it.
+
+
+3. https://numpydoc.readthedocs.io/en/latest/format.html
+
+numpydoc docstring guide  - NumPy’s combination of reStructured and Google 
+Docstrings - supported by Sphinx, has formal specs
+
+    Example
+        """Gets and prints the spreadsheet's header columns
+
+        Parameters
+        ----------
+        file_loc : str
+            The file location of the spreadsheet
+        print_cols : bool, optional
+            A flag used to print the columns to the console (default is False)
+
+        Returns
+        -------
+        list
+            a list of strings representing the header columns
+        """ 
+
+4. https://docutils.sourceforge.io/rst.html
+
+RST ReStructuredText  - Official Python docs standard; Not beginner friendly
+but feature rich - supported by Sphinx, has formal specs
+
+    Example
+        """Gets and prints the spreadsheet's header columns
+
+        :param file_loc: The file location of the spreadsheet
+        :type file_loc: str
+        :param print_cols: A flag used to print the columns to the console
+            (default is False)
+        :type print_cols: bool
+        :returns: a list of strings representing the header columns
+        :rtype: list
+        """
+
+5. https://stackoverflow.com/questions/44084/how-do-i-document-a-module-in-python
+
+For PyPI Packages:
+
+If you add doc strings like this in your __init__.py file as seen below
+
+------------------
+"""
+Please refer to the documentation provided in the README.md,
+which can be found at gorpyter's PyPI URL: https://pypi.org/project/gorpyter/
+"""
+
+# <IMPORT_DEPENDENCIES>
+
+def setup():
+    """Verify your Python and R dependencies."""
+------------------
+
+Then you will receive this in everyday usage of the help function.
+
+help(<YOUR_PACKAGE>)
+
+------------------
+DESCRIPTION
+    Please refer to the documentation provided in the README.md,
+    which can be found at gorpyter's PyPI URL: https://pypi.org/project/gorpyter/
+
+
+FUNCTIONS
+    setup()
+        Verify your Python and R dependencies.
+------------------
+
+Note, that my help DESCRIPTION is triggered by having that first docstring at
+the very top of the file.
+
+
+6. https://www.python.org/dev/peps/pep-0257/
+
+Rationale
+The aim of this PEP is to standardize the high-level structure of docstrings:
+what they should contain, and how to say it (without touching on any markup
+syntax within docstrings)
+
+If you violate these conventions, the worst you'll get is some dirty looks.
+But some software (such as the Docutils [3] docstring processing system [1]
+[2]) will be aware of the conventions, so following them will get you the 
+best results.
+
+All modules should normally have docstrings, and all functions and classes
+exported by a module should also have docstrings. Public methods (including
+the __init__ constructor) should also have docstrings. A package may be 
+documented in the module docstring of the __init__.py file in the package
+directory.
+
+For consistency, always use """triple double quotes""" around docstrings. Use
+r"""raw triple double quotes""" if you use any backslashes in your 
+docstrings. For Unicode docstrings, use u"""Unicode triple-quoted strings""".
+
+- Triple quotes are used even though the string fits on one line. This makes
+it easy to later expand it.
+
+- The closing quotes are on the same line as the opening quotes. This looks 
+better for one-liners.
+
+- There's no blank line either before or after the docstring.
+
+- The docstring is a phrase ending in a period. It prescribes the function or
+method's effect as a command ("Do this", "Return that"), not as a 
+description; e.g. don't write "Returns the pathname ...".
+
+- The one-line docstring should NOT be a "signature" reiterating the 
+function/method parameters (which can be obtained by introspection). Don't 
+do:
+    def function(a, b):
+        """function(a, b) -> list"""
+
+The docstring for a function or method should summarize its behavior and 
+document its arguments, return value(s), side effects, exceptions raised, and
+restrictions on when it can be called (all if applicable). Optional arguments
+should be indicated. It should be documented whether keyword arguments are 
+part of the interface.
+
+    def complex(real=0.0, imag=0.0):
+        """Form a complex number.
+
+        Keyword arguments:
+        real -- the real part (default 0.0)
+        imag -- the imaginary part (default 0.0)
+        """
+        if imag == 0.0 and real == 0.0:
+        return complex_zero
+
+
+
