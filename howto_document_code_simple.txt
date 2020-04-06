@@ -10,8 +10,7 @@ in the 'howto_' and 'example_' files in each directory. But, here are
 some general principles (requests? even pleas!) to get you started.
 
 algos - Shared code that provides working algorithms.
-    - Please document each module at both the module level and within
-      each function.
+    - Please document each module at both the MODULE and FUNCTION level.
     - Embed a test using " if __name__ == "__main__": "
     - Embed a simple data set on which to run the test, otherwise document 
       where to get the test data.
@@ -20,10 +19,9 @@ algos - Shared code that provides working algorithms.
         
 libs - Shared collections of code (a library) that provide working
        algorithms/utilities/etc.
-    - Please document each module at both the module level and within
-      each function.
-    - Document the __init__.py module with an overview of what the library
-      does and any dependencies or limitations.
+    - Please document each module at both the MODULE and FUNCTION level..
+    - Document the PACKAGE __init__.py module with an overview of what 
+      the library does and any dependencies or limitations.
     - Embed a test using " if __name__ == "__main__": "
     - Embed test data or document where to get test data.
     - Best case, embed a test and data AND a comparison to known results 
@@ -31,15 +29,14 @@ libs - Shared collections of code (a library) that provide working
         
 snips - Contains example code about how to do something. These do not 
         necessarily have to be fully working example.
-    - Please thouroughly document each module within each function,
+    - Please thouroughly document each MODULE within each function,
       especially if it is non-working code.
     - If possible, embed a test using " if __name__ == "__main__": "
         
 utils - For shared code that provided working utility functions.
     - These are 'non-algos' modules/functions that could be of use to users.
         - example: data conversion, plotting, etc.
-    - Please document each module at both the module level and within
-      each function.    
+    - Please document each module at both the MODULE and FUNCTION level..    
     - Embed a test using " if __name__ == "__main__": "
     - Embed a simple data set on which to run the test, otherwise document 
       where to get the test data.

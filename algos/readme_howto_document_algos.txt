@@ -11,11 +11,11 @@ Documenting Your Modules
 ------------------------
 
 - Please add documentation at:
-	- MODULE level - right at the top of the file
-	- FUNCTION level - within each function
-	- You can do a README file if you want, but that does not show up 
-	  auto-magically using the help() call at the python command line.
-	  
+    - MODULE level - right at the top of the file
+    - FUNCTION level - within each function
+    - You can do a README file if you want, but that does not show up 
+      auto-magically using the help() call at the python command line.
+      
 - Try to add an Example for using your code in the MODULE docstring. This 
   will show up when users type help()
 
@@ -37,7 +37,7 @@ Example - Trival, but a start.
 -------
 Note. The example below is a trivial one. There is a lot more info that could 
 be put into each section. Please take the time to check out some of the 
-resources in the code-python/_resource_documentationlinks below.
+resources in the code-python/_how_to_document directory.
 
 
 # -*- coding: utf-8 -*-

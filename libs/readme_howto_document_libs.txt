@@ -12,20 +12,20 @@ put your code here. All modules should be tested to work as described. Ideally
 they will contain unit-test level data/test() functionality embedded within
 each module.
 
-Please see: code-python/howto_document_code_extensive.txt  for a selection
-of comments on documentation that we found inspiring.
+Please see: code-python/_how_to_document/howto_document_code_extensive.txt  
+for a selection of comments on documentation that we found inspiring.
 
 
 Documenting Your Library
 ------------------------
 
 - Please add documentation at:
-	- PACKAGE level  - in the __init__.py file
-	- MODULE level   - right at the top of each module file
-	- FUNCTION level - within each function
-	- You can do a README file if you want, but that does not show up 
-	  auto-magically using the help() call at the python command line.
-	  
+    - PACKAGE level  - in the __init__.py file
+    - MODULE level   - right at the top of each module file
+    - FUNCTION level - within each function
+    - You can do a README file if you want, but that does not show up 
+      auto-magically using the help() call at the python command line.
+      
 - Add an Example for using your code in each MODULE docstring. This will show 
   up when users type help()
 
